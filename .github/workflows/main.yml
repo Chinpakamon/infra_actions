@@ -57,7 +57,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          key: ${{ secrets.SSH_KEY_FOR_YANDEX_CLOUD }}
+          key: ${{ secrets.SSH_KEY }}
 
           script: |
             # Выполняет pull образа с DockerHub
@@ -65,4 +65,3 @@ jobs:
             #остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 5000:5000 chinpakamon/gates
-  
